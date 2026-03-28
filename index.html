@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ｲｲﾋﾄ - プロダクト開発支援 | 業務フロー整理・要件定義・スクラム導入</title>
+<meta name="description" content="ｲｲﾋﾄ（水野亮人）は業務フロー整理、MVP要件定義、開発タスク管理、スクラム導入を得意とする個人事業主です。プロダクト開発の上流工程から一気通貫でサポートします。">
+<meta name="keywords" content="ｲｲﾋﾄ,水野亮人,プロダクト開発支援,業務フロー整理,要件定義,スクラムマスター,PM,PMO,オフショア開発ブリッジ">
+<meta property="og:title" content="ｲｲﾋﾄ - プロダクト開発支援">
+<meta property="og:description" content="業務フロー整理・要件定義・スクラム導入。プロダクトを「つくる前」から「つくりきる」まで一気通貫でサポート。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://iihito.jp/">
+<meta property="og:locale" content="ja_JP">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://iihito.jp/">
+<style>
+/* ============================================
+   Retro-Futuristic Earthy Theme
+   90s structure x analog warmth x trust
+   ============================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap');
+
+:root {
+  --parchment:    #f5f0e8;
+  --parchment-d:  #ede6d8;
+  --sand:         #d4c9b0;
+  --terracotta:   #b5654a;
+  --terracotta-d: #984f38;
+  --olive:        #6b7c5e;
+  --olive-l:      #8a9e78;
+  --clay:         #8b7355;
+  --ink:          #2c2418;
+  --ink-soft:     #4a3f30;
+  --slate:        #6e655a;
+  --warm-gray:    #9e9484;
+  --amber:        #c8973e;
+  --cream:        #faf7f0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--parchment);
+  color: var(--ink);
+  font-family: "Zen Kaku Gothic New", "Hiragino Kaku Gothic ProN", sans-serif;
+  font-size: 15px;
+  line-height: 1.8;
+  margin: 0;
+  padding: 0;
+  /* subtle paper grain */
+  background-image:
+    url("data:image/svg+xml,%3Csvg width='200' height='200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='0.65' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+}
+
+code, .mono {
+  font-family: "IBM Plex Mono", "Osaka-Mono", monospace;
+}
+
+a {
+  color: var(--terracotta);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s;
+}
+
+a:hover {
+  border-bottom-color: var(--terracotta);
+}
+
+a:visited {
+  color: var(--clay);
+}
+
+::selection {
+  background: var(--terracotta);
+  color: var(--cream);
+}
+
+/* ── Layout ── */
+.container {
+  max-width: 740px;
+  margin: 0 auto;
+  padding: 24px 24px 60px;
+}
+
+/* ── Scan-line overlay (subtle CRT nod) ── */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(44, 36, 24, 0.015) 2px,
+    rgba(44, 36, 24, 0.015) 4px
+  );
+  z-index: 9999;
+}
+
+/* ── Header ── */
+.header {
+  border: 2px solid var(--ink);
+  background:
+    linear-gradient(135deg, var(--ink) 0%, #3d3225 100%);
+  color: var(--parchment);
+  padding: 28px 28px 24px;
+  margin-bottom: 6px;
+  position: relative;
+  overflow: hidden;
+}
+
+.header::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background:
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 1px,
+      rgba(245, 240, 232, 0.03) 1px,
+      rgba(245, 240, 232, 0.03) 2px
+    );
+  pointer-events: none;
+}
+
+.header-title {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 28px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  margin: 0 0 6px;
+}
+
+.header-sub {
+  font-size: 13px;
+  color: var(--sand);
+  letter-spacing: 0.05em;
+}
+
+.header-update {
+  position: absolute;
+  right: 28px;
+  bottom: 12px;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 11px;
+  color: var(--warm-gray);
+}
+
+/* ── Counter (retro nod) ── */
+.counter {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 11px;
+  color: var(--warm-gray);
+  text-align: right;
+  margin-bottom: 16px;
+  letter-spacing: 0.03em;
+}
+
+/* ── Ticker ── */
+.ticker {
+  background-color: var(--parchment-d);
+  border-top: 1px solid var(--sand);
+  border-bottom: 1px solid var(--sand);
+  padding: 8px 12px;
+  margin: 16px 0;
+  overflow: hidden;
+  white-space: nowrap;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 12px;
+  color: var(--slate);
+  letter-spacing: 0.04em;
+}
+
+.ticker span {
+  display: inline-block;
+  animation: scroll-left 22s linear infinite;
+}
+
+@keyframes scroll-left {
+  0%   { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+/* ── Navigation ── */
+.nav {
+  display: flex;
+  gap: 0;
+  margin: 20px 0 24px;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 13px;
+}
+
+.nav a {
+  flex: 1;
+  text-align: center;
+  padding: 10px 8px;
+  border: 1px solid var(--sand);
+  color: var(--ink-soft);
+  background: var(--cream);
+  transition: all 0.15s;
+  border-bottom-width: 2px;
+}
+
+.nav a:hover {
+  background: var(--ink);
+  color: var(--parchment);
+  border-color: var(--ink);
+  border-bottom-color: var(--terracotta);
+}
+
+.nav a + a {
+  border-left: none;
+}
+
+/* ── Divider ── */
+.divider {
+  border: none;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--sand) 15%,
+    var(--sand) 85%,
+    transparent 100%
+  );
+  margin: 28px 0;
+}
+
+/* ── Section heading ── */
+.section-heading {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 32px 0 16px;
+  font-weight: 700;
+  font-size: 16px;
+  letter-spacing: 0.06em;
+}
+
+.section-heading::before {
+  content: "";
+  width: 4px;
+  height: 22px;
+  background: var(--terracotta);
+  flex-shrink: 0;
+}
+
+.section-heading::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--sand);
+  margin-left: 8px;
+}
+
+/* ── Capability tags ── */
+.capabilities {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 16px 0;
+  padding: 0;
+  list-style: none;
+}
+
+.capabilities li {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 12px;
+  padding: 5px 12px;
+  background: var(--cream);
+  border: 1px solid var(--sand);
+  color: var(--ink-soft);
+  letter-spacing: 0.02em;
+}
+
+/* ── Work cards ── */
+.work-card {
+  background: var(--cream);
+  border: 1px solid var(--sand);
+  margin-bottom: 20px;
+  transition: border-color 0.2s;
+}
+
+.work-card:hover {
+  border-color: var(--terracotta);
+}
+
+.work-card-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 20px;
+  border-bottom: 1px solid var(--parchment-d);
+  background: linear-gradient(90deg, var(--parchment-d) 0%, var(--cream) 100%);
+}
+
+.work-number {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--terracotta);
+  min-width: 32px;
+}
+
+.work-title {
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.03em;
+}
+
+.work-card-body {
+  padding: 14px 20px 16px;
+}
+
+.work-detail {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.work-detail li {
+  position: relative;
+  padding-left: 18px;
+  margin-bottom: 5px;
+  font-size: 13px;
+  color: var(--ink-soft);
+  line-height: 1.7;
+}
+
+.work-detail li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.65em;
+  width: 6px;
+  height: 6px;
+  border: 1.5px solid var(--olive);
+  background: transparent;
+}
+
+/* ── Preparing card ── */
+.work-card.preparing {
+  border-style: dashed;
+  opacity: 0.6;
+}
+
+.work-card.preparing .work-number {
+  color: var(--warm-gray);
+}
+
+/* ── Contact table ── */
+.contact-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 16px 0;
+}
+
+.contact-table th,
+.contact-table td {
+  padding: 10px 16px;
+  text-align: left;
+  font-size: 14px;
+  border-bottom: 1px solid var(--sand);
+}
+
+.contact-table th {
+  width: 100px;
+  background: var(--parchment-d);
+  color: var(--slate);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  border-right: 2px solid var(--terracotta);
+}
+
+.contact-table td {
+  background: var(--cream);
+}
+
+/* ── Back to top ── */
+.back-to-top {
+  text-align: right;
+  margin-top: 12px;
+}
+
+.back-to-top a {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 11px;
+  color: var(--warm-gray);
+  letter-spacing: 0.04em;
+}
+
+.back-to-top a:hover {
+  color: var(--terracotta);
+}
+
+/* ── Footer ── */
+.footer {
+  text-align: center;
+  padding-top: 20px;
+  font-size: 12px;
+  color: var(--warm-gray);
+  letter-spacing: 0.03em;
+}
+
+.footer-rule {
+  display: block;
+  width: 40px;
+  height: 2px;
+  background: var(--terracotta);
+  margin: 0 auto 16px;
+  border: none;
+}
+
+.footer .license {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 10px;
+  margin-top: 8px;
+  color: var(--sand);
+}
+
+/* ── Intro paragraph ── */
+.intro {
+  font-size: 14px;
+  line-height: 2;
+  color: var(--ink-soft);
+}
+
+/* ── "NEW" badge ── */
+.badge-new {
+  display: inline-block;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--cream);
+  background: var(--terracotta);
+  padding: 1px 6px;
+  margin-left: 6px;
+  letter-spacing: 0.08em;
+  vertical-align: middle;
+}
+
+/* ── Responsive ── */
+@media (max-width: 600px) {
+  .container {
+    padding: 16px 14px 40px;
+  }
+  .header {
+    padding: 20px 18px 18px;
+  }
+  .header-title {
+    font-size: 22px;
+  }
+  .header-update {
+    position: static;
+    display: block;
+    margin-top: 8px;
+  }
+  .nav {
+    flex-direction: column;
+  }
+  .nav a + a {
+    border-left: 1px solid var(--sand);
+    border-top: none;
+  }
+  .work-card-header {
+    padding: 12px 14px;
+  }
+  .work-card-body {
+    padding: 12px 14px;
+  }
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+<!-- ======== Header ======== -->
+<a id="top"></a>
+<div class="header">
+  <div class="header-title">ｲｲﾋﾄ</div>
+  <div class="header-sub">Product Development Support &mdash; since 2026</div>
+  <div class="header-update">upd. 2026/03/28</div>
+</div>
+
+<div class="counter">
+visitor no. &#9632;&#9632;&#9632;&#9632;
+</div>
+
+<!-- ======== Ticker ======== -->
+<div class="ticker">
+<span>&gt;&gt; ｲｲﾋﾄ は業務フロー整理・プロダクト開発支援・スクラム導入を得意とする個人事業主です &lt;&lt;</span>
+</div>
+
+<!-- ======== Navigation ======== -->
+<nav class="nav">
+  <a href="#about">About</a>
+  <a href="#works">Works</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<!-- ======== About ======== -->
+<div class="section-heading"><a id="about"></a>ｲｲﾋﾄについて</div>
+
+<p class="intro">
+ｲｲﾋﾄ は、プロダクト開発の上流工程を中心に支援を行う個人事業主です。<br>
+業務フロー整理、要件定義、開発タスク管理、チームビルディングなど、<br>
+プロダクトを「つくる前」から「つくりきる」までを一気通貫でサポートします。
+</p>
+
+<div class="section-heading" style="margin-top: 24px;">水野亮人</div>
+
+<p class="intro">
+金沢大学卒業後、アイ・オー・データ機器にHWエンジニアとして入社。その後、新規事業開発をリードし、社内初の「SaaS Plus a Box」プロダクトを立ち上げ。退社後、複数社でPM/PMOとしてプロダクト開発併走支援を行っている。2024年、NFCの価値を広めることを目指して株式会社TAGPPIを設立し、現在も共同代表。宅録音楽家としてGeGeGeとしても活動中。生成AI駆動開発の波の中、2025年、ペットボトル水のレビューサイト「MIZUNOMO」の個人開発と運営を開始。NoteやYoutube,各種SNSたまに更新します。
+</p>
+
+<ul class="capabilities">
+<li>業務フロー整理・可視化</li>
+<li>ユーザーストーリー / MVP要件定義</li>
+<li>テスト設計・開発タスク管理</li>
+<li>スクラム導入・SM育成</li>
+<li>オフショア開発ブリッジ</li>
+<li>社内業務自動化支援</li>
+</ul>
+
+<div class="back-to-top"><a href="#top">[TOP]</a></div>
+
+<hr class="divider">
+
+<!-- ======== Works ======== -->
+<div class="section-heading"><a id="works"></a>業務実績 <span class="badge-new">NEW</span></div>
+
+<p class="intro">
+これまでの主な支援実績をご紹介します。
+</p>
+
+<!-- Work 1 -->
+<div class="work-card">
+<div class="work-card-header">
+  <div class="work-number">01</div>
+  <div class="work-title">卸売業者様のプロダクト開発支援</div>
+</div>
+<div class="work-card-body">
+<ul class="work-detail">
+<li>業務フロー整理</li>
+<li>オフショア開発エンジニアとの要件ブリッジ</li>
+</ul>
+</div>
+</div>
+
+<!-- Work 2 -->
+<div class="work-card">
+<div class="work-card-header">
+  <div class="work-number">02</div>
+  <div class="work-title">建設商社様のプロダクト開発支援</div>
+</div>
+<div class="work-card-body">
+<ul class="work-detail">
+<li>業務フロー整理</li>
+<li>ユーザーストーリー洗い出し</li>
+<li>MVP要件定義整理</li>
+<li>テスト設計</li>
+<li>開発タスク管理</li>
+</ul>
+</div>
+</div>
+
+<!-- Work 3 -->
+<div class="work-card">
+<div class="work-card-header">
+  <div class="work-number">03</div>
+  <div class="work-title">セキュリティSaaS開発会社様のプロダクト開発支援</div>
+</div>
+<div class="work-card-body">
+<ul class="work-detail">
+<li>業務フロー整理</li>
+<li>ユーザーストーリー洗い出し</li>
+<li>MVP要件定義</li>
+<li>社内工数測定と見える化</li>
+<li>社内業務フロー自動化支援</li>
+<li>チーミング文書の設計支援と作成</li>
+<li>開発タスク管理</li>
+<li>スクラムマスターの育成</li>
+</ul>
+</div>
+</div>
+
+<!-- Work 4: Preparing -->
+<div class="work-card preparing">
+<div class="work-card-header">
+  <div class="work-number">04</div>
+  <div class="work-title">（準備中）</div>
+</div>
+<div class="work-card-body">
+<ul class="work-detail">
+<li>Coming soon...</li>
+</ul>
+</div>
+</div>
+
+<!--
+===========================================
+  業務実績の追加方法:
+  下記テンプレートをコピーして、上の work-card の
+  直後に貼り付けてください。番号は適宜変更してください。
+===========================================
+
+<div class="work-card">
+<div class="work-card-header">
+  <div class="work-number">05</div>
+  <div class="work-title">○○様のプロダクト開発支援</div>
+</div>
+<div class="work-card-body">
+<ul class="work-detail">
+<li>支援内容1</li>
+<li>支援内容2</li>
+<li>支援内容3</li>
+</ul>
+</div>
+</div>
+
+===========================================
+-->
+
+<div class="back-to-top"><a href="#top">[TOP]</a></div>
+
+<hr class="divider">
+
+<!-- ======== Contact ======== -->
+<div class="section-heading"><a id="contact"></a>お問い合わせ</div>
+
+<p class="intro">
+お仕事のご相談・ご依頼はお気軽にどうぞ。
+</p>
+
+<table class="contact-table">
+<tr>
+<th>屋号</th>
+<td>ｲｲﾋﾄ</td>
+</tr>
+<tr>
+<th>Mail</th>
+<td><a href="mailto:rmizuno@iihito.jp">rmizuno@iihito.jp</a></td>
+</tr>
+</table>
+
+<div class="back-to-top"><a href="#top">[TOP]</a></div>
+
+<hr class="divider">
+
+<!-- ======== Footer ======== -->
+<div class="footer">
+  <span class="footer-rule"></span>
+  <p class="mono" style="font-size: 11px;">
+    &lt;!-- managed by ｲｲﾋﾄ --&gt;
+  </p>
+  <p>
+    Since 2026 ｲｲﾋﾄ. All Rights Reserved.
+  </p>
+  <p class="license">このサイトはリンクフリーです。</p>
+</div>
+
+</div><!-- /.container -->
+</body>
+</html>
