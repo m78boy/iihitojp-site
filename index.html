@@ -262,6 +262,9 @@ a:visited { color: var(--ink-soft); }
 }
 
 .nav-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   font-family: "IBM Plex Mono", monospace;
   font-size: 11px;
   font-weight: 700;
@@ -270,20 +273,12 @@ a:visited { color: var(--ink-soft); }
   background: var(--paper);
   border: 1px solid var(--ink);
   color: var(--ink);
-  cursor: pointer;
   padding: 0 6px;
   box-shadow:
     inset 1px 1px 0 var(--paper-3),
     inset -1px -1px 0 var(--line-deep);
   line-height: 1;
-}
-
-.nav-btn:hover { background: var(--paper-2); }
-
-.nav-btn:active {
-  box-shadow:
-    inset -1px -1px 0 var(--paper-3),
-    inset 1px 1px 0 var(--line-deep);
+  user-select: none;
 }
 
 .address-field {
@@ -331,18 +326,22 @@ a:visited { color: var(--ink-soft); }
 }
 
 .go-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   font-family: "IBM Plex Mono", monospace;
   font-size: 11px;
   font-weight: 700;
-  padding: 4px 10px;
+  height: 24px;
+  padding: 0 10px;
   background: var(--paper);
   border: 1px solid var(--ink);
   color: var(--ink);
-  cursor: pointer;
   box-shadow:
     inset 1px 1px 0 var(--paper-3),
     inset -1px -1px 0 var(--line-deep);
   letter-spacing: 0.08em;
+  user-select: none;
 }
 
 .go-btn::before {
