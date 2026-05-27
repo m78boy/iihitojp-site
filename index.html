@@ -4,55 +4,61 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ｲｲﾋﾄ - プロダクト開発支援 | 業務フロー整理・要件定義・スクラム導入</title>
-<meta name="description" content="ｲｲﾋﾄ（水野亮人）は業務フロー整理、MVP要件定義、開発タスク管理、スクラム導入を得意とする個人事業主です。プロダクト開発の上流工程から一気通貫でサポートします。">
+<meta name="description" content="ｲｲﾋﾄ（水野亮人）は仕様書になる手前の領域に強いPM/PMOです。業務フロー整理、MVP要件定義、スクラム導入、オフショア開発ブリッジで、プロダクトの立ち上げから運用まで併走します。">
 <meta name="keywords" content="ｲｲﾋﾄ,水野亮人,プロダクト開発支援,業務フロー整理,要件定義,スクラムマスター,PM,PMO,オフショア開発ブリッジ">
+<meta name="theme-color" content="#d24632">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://iihito.jp/">
 <meta property="og:title" content="ｲｲﾋﾄ - プロダクト開発支援">
-<meta property="og:description" content="業務フロー整理・要件定義・スクラム導入。プロダクトを「つくる前」から「つくりきる」まで一気通貫でサポート。">
+<meta property="og:description" content="仕様書になる手前を中心に、プロダクトの立ち上げと開発に併走するPM/PMOです。">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://iihito.jp/">
 <meta property="og:locale" content="ja_JP">
-<meta name="robots" content="index, follow">
-<link rel="canonical" href="https://iihito.jp/">
+<meta property="og:site_name" content="ｲｲﾋﾄ">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ｲｲﾋﾄ - プロダクト開発支援">
+<meta name="twitter:description" content="仕様書になる手前を中心に、プロダクトの立ち上げと開発に併走するPM/PMOです。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap">
 <style>
 /* ============================================
-   Retro-Futuristic Earthy Theme
-   90s structure x analog warmth x trust
+   Old-Browser Window x Showa Hero
+   90s/00s window chrome  x  warm cream paper
    ============================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap');
-
 :root {
-  --parchment:    #f5f0e8;
-  --parchment-d:  #ede6d8;
-  --sand:         #d4c9b0;
-  --terracotta:   #b5654a;
-  --terracotta-d: #984f38;
-  --olive:        #6b7c5e;
-  --olive-l:      #8a9e78;
-  --clay:         #8b7355;
-  --ink:          #2c2418;
-  --ink-soft:     #4a3f30;
-  --slate:        #6e655a;
-  --warm-gray:    #9e9484;
-  --amber:        #c8973e;
-  --cream:        #faf7f0;
+  --paper:        #f3ecd8;
+  --paper-2:      #fbf6e6;
+  --paper-3:      #ffffff;
+  --ink:          #2a2418;
+  --ink-soft:     #4f4533;
+  --warm-gray:    #8b8170;
+  --line:         #e0d4b4;
+  --line-bright:  #c2b48d;
+  --line-deep:    #9a8a60;
+  --red:          #d24632;
+  --red-d:        #a8351e;
+  --red-soft:     #ee7b5e;
+  --blue:         #2f7aa3;
+  --blue-d:       #1f5a80;
+  --amber:        #e0a83a;
+  --amber-soft:   #f3c560;
+  --green:        #5a9a3a;
 }
 
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
 
 body {
-  background-color: var(--parchment);
+  background-color: #e6dab8;
   color: var(--ink);
   font-family: "Zen Kaku Gothic New", "Hiragino Kaku Gothic ProN", sans-serif;
   font-size: 15px;
   line-height: 1.8;
-  margin: 0;
-  padding: 0;
-  /* subtle paper grain */
   background-image:
-    url("data:image/svg+xml,%3Csvg width='200' height='200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='0.65' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+    url("data:image/svg+xml,%3Csvg width='220' height='220' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.07'/%3E%3C/svg%3E");
+  background-attachment: fixed;
 }
 
 code, .mono {
@@ -60,126 +66,498 @@ code, .mono {
 }
 
 a {
-  color: var(--terracotta);
+  color: var(--red-d);
   text-decoration: none;
-  border-bottom: 1px solid transparent;
-  transition: border-color 0.2s;
+  border-bottom: 1px solid rgba(168, 53, 30, 0.35);
+  transition: color 0.15s, border-color 0.15s, background-color 0.15s;
 }
 
 a:hover {
-  border-bottom-color: var(--terracotta);
+  color: var(--paper-3);
+  background: var(--red);
+  border-bottom-color: var(--red-d);
 }
 
-a:visited {
-  color: var(--clay);
+a:visited { color: var(--ink-soft); }
+
+::selection { background: var(--amber-soft); color: var(--ink); }
+
+:focus-visible {
+  outline: 2px solid var(--red);
+  outline-offset: 2px;
 }
 
-::selection {
-  background: var(--terracotta);
-  color: var(--cream);
-}
-
-/* ── Layout ── */
+/* ── Outer page padding ── */
 .container {
-  max-width: 740px;
+  max-width: 820px;
   margin: 0 auto;
-  padding: 24px 24px 60px;
+  padding: 16px 12px 60px;
 }
 
-/* ── Scan-line overlay (subtle CRT nod) ── */
-body::after {
-  content: "";
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  background: repeating-linear-gradient(
-    0deg,
-    transparent,
-    transparent 2px,
-    rgba(44, 36, 24, 0.015) 2px,
-    rgba(44, 36, 24, 0.015) 4px
-  );
-  z-index: 9999;
-}
-
-/* ── Header ── */
-.header {
+/* ============================================
+   BROWSER WINDOW CHROME
+   ============================================ */
+.browser-window {
+  background: var(--paper);
   border: 2px solid var(--ink);
-  background:
-    linear-gradient(135deg, var(--ink) 0%, #3d3225 100%);
-  color: var(--parchment);
-  padding: 28px 28px 24px;
-  margin-bottom: 6px;
+  box-shadow:
+    inset 1px 1px 0 var(--paper-3),
+    inset -2px -2px 0 var(--line-deep),
+    4px 4px 0 rgba(42, 36, 24, 0.18),
+    8px 8px 0 rgba(42, 36, 24, 0.08);
+  margin-bottom: 16px;
+}
+
+/* title bar */
+.window-titlebar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 5px 8px;
+  background: linear-gradient(180deg, var(--red-soft) 0%, var(--red) 50%, var(--red-d) 100%);
+  border-bottom: 2px solid var(--ink);
   position: relative;
   overflow: hidden;
+}
+
+.window-titlebar::before {
+  content: "";
+  position: absolute;
+  inset: 4px 4px 4px 4px;
+  background: repeating-linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.32) 0,
+    rgba(255, 255, 255, 0.32) 1px,
+    transparent 1px,
+    transparent 3px
+  );
+  pointer-events: none;
+  opacity: 0.7;
+}
+
+.window-controls {
+  display: flex;
+  gap: 6px;
+  z-index: 2;
+  position: relative;
+}
+
+.ctrl {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.45);
+  display: block;
+  box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+.ctrl-close { background: #ff5f56; }
+.ctrl-min   { background: var(--amber); }
+.ctrl-max   { background: var(--green); }
+
+.window-title {
+  flex: 1;
+  text-align: center;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--paper-3);
+  background: var(--red-d);
+  padding: 2px 14px;
+  border: 1px solid var(--ink);
+  z-index: 2;
+  position: relative;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.35);
+  max-width: 60%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.window-corner {
+  width: 56px;
+  z-index: 2;
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  gap: 4px;
+}
+
+.window-corner span {
+  width: 14px;
+  height: 14px;
+  background: var(--paper);
+  border: 1px solid var(--ink);
+  display: inline-block;
+  position: relative;
+}
+
+.window-corner span::before {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 10px;
+  color: var(--ink);
+  line-height: 1;
+}
+
+.window-corner .c-min::before  { content: "_"; transform: translateY(-2px); }
+.window-corner .c-max::before  { content: "□"; }
+.window-corner .c-close::before { content: "×"; font-weight: 700; }
+
+/* menu bar */
+.window-menubar {
+  display: flex;
+  gap: 4px;
+  padding: 3px 8px;
+  background: var(--paper);
+  border-bottom: 1px solid var(--line-bright);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 12px;
+  color: var(--ink-soft);
+}
+
+.menu-item {
+  padding: 2px 8px;
+  border: 1px solid transparent;
+  user-select: none;
+  color: var(--ink-soft);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  background: transparent;
+}
+
+.menu-item .accent {
+  text-decoration: underline;
+  color: var(--red-d);
+}
+
+.menu-item:hover,
+.menu-item:focus-visible {
+  background: var(--red);
+  color: var(--paper-3);
+  border-bottom-color: transparent;
+  outline: none;
+}
+
+.menu-item:hover .accent,
+.menu-item:focus-visible .accent {
+  color: var(--paper-3);
+}
+
+.menu-item:visited { color: var(--ink-soft); }
+
+/* address bar */
+.window-addressbar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 8px;
+  background: var(--paper-2);
+  border-bottom: 2px solid var(--ink);
+}
+
+.nav-btn {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 11px;
+  font-weight: 700;
+  min-width: 26px;
+  height: 24px;
+  background: var(--paper);
+  border: 1px solid var(--ink);
+  color: var(--ink);
+  cursor: pointer;
+  padding: 0 6px;
+  box-shadow:
+    inset 1px 1px 0 var(--paper-3),
+    inset -1px -1px 0 var(--line-deep);
+  line-height: 1;
+}
+
+.nav-btn:hover { background: var(--paper-2); }
+
+.nav-btn:active {
+  box-shadow:
+    inset -1px -1px 0 var(--paper-3),
+    inset 1px 1px 0 var(--line-deep);
+}
+
+.address-field {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 10px;
+  background: var(--paper-3);
+  border: 1px solid var(--ink);
+  box-shadow:
+    inset 1px 1px 0 var(--line-deep),
+    inset -1px -1px 0 var(--paper-3);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 12px;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.address-label {
+  color: var(--warm-gray);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  flex-shrink: 0;
+  text-transform: uppercase;
+}
+
+.address-url {
+  color: var(--ink);
+  font-weight: 500;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.address-url::before {
+  content: "★ ";
+  color: var(--amber);
+  animation: star-pulse 1.8s ease-in-out infinite;
+}
+
+@keyframes star-pulse {
+  0%, 100% { color: var(--amber); }
+  50%      { color: var(--red); }
+}
+
+.go-btn {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 10px;
+  background: var(--paper);
+  border: 1px solid var(--ink);
+  color: var(--ink);
+  cursor: pointer;
+  box-shadow:
+    inset 1px 1px 0 var(--paper-3),
+    inset -1px -1px 0 var(--line-deep);
+  letter-spacing: 0.08em;
+}
+
+.go-btn::before {
+  content: "▶ ";
+  color: var(--red);
+}
+
+/* main content area */
+.window-content {
+  padding: 18px 18px 10px;
+  background: var(--paper);
+  background-image:
+    repeating-linear-gradient(
+      90deg,
+      transparent 0,
+      transparent 19px,
+      rgba(168, 53, 30, 0.025) 19px,
+      rgba(168, 53, 30, 0.025) 20px
+    );
+}
+
+/* status bar */
+.window-statusbar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 4px 10px;
+  background: var(--paper);
+  border-top: 1px solid var(--line-bright);
+  box-shadow: inset 0 1px 0 var(--paper-3);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 10px;
+  color: var(--ink-soft);
+  letter-spacing: 0.06em;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  background: var(--green);
+  border-radius: 50%;
+  display: inline-block;
+  animation: blink-dot 1.6s ease-in-out infinite;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.25);
+  flex-shrink: 0;
+}
+
+@keyframes blink-dot {
+  0%, 100% { opacity: 1; }
+  50%      { opacity: 0.35; }
+}
+
+.status-spacer { flex: 1; }
+
+.status-meta {
+  padding: 0 8px;
+  border-left: 1px solid var(--line-bright);
+  white-space: nowrap;
+}
+
+.status-meta-secure::before {
+  content: "■ ";
+  color: var(--green);
+}
+
+/* ============================================
+   PAGE CONTENT
+   ============================================ */
+
+/* ── Header: clean title card ── */
+.header {
+  position: relative;
+  border: 2px solid var(--ink);
+  background:
+    radial-gradient(circle at 50% 55%, rgba(243, 197, 96, 0.18) 0%, transparent 55%),
+    radial-gradient(circle at 50% 55%, var(--paper-2) 0%, var(--paper) 85%);
+  color: var(--ink);
+  padding: 30px 24px 22px;
+  margin: 0;
+  overflow: hidden;
+  box-shadow:
+    inset 2px 2px 0 var(--paper-3),
+    inset -2px -2px 0 var(--line-bright);
 }
 
 .header::before {
   content: "";
   position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
+  left: 50%;
+  top: 50%;
+  width: 520px;
+  height: 520px;
+  transform: translate(-50%, -50%);
   background:
-    repeating-linear-gradient(
-      90deg,
-      transparent,
-      transparent 1px,
-      rgba(245, 240, 232, 0.03) 1px,
-      rgba(245, 240, 232, 0.03) 2px
+    repeating-radial-gradient(
+      circle,
+      transparent 0,
+      transparent 26px,
+      rgba(210, 70, 50, 0.06) 26px,
+      rgba(210, 70, 50, 0.06) 27px
     );
   pointer-events: none;
 }
 
+.header::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 900px;
+  height: 900px;
+  transform: translate(-50%, -50%);
+  background:
+    repeating-conic-gradient(
+      from 0deg,
+      transparent 0deg 6deg,
+      rgba(210, 70, 50, 0.04) 6deg 6.4deg
+    );
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+.header-inner {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
 .header-title {
-  font-family: "IBM Plex Mono", monospace;
-  font-size: 28px;
-  font-weight: 600;
-  letter-spacing: 0.15em;
-  margin: 0 0 6px;
+  font-family: "Zen Kaku Gothic New", sans-serif;
+  font-size: 60px;
+  font-weight: 900;
+  letter-spacing: 0.22em;
+  margin: 0;
+  color: var(--ink);
+  text-shadow: 2px 2px 0 var(--red-soft);
+  line-height: 1;
 }
 
 .header-sub {
-  font-size: 13px;
-  color: var(--sand);
-  letter-spacing: 0.05em;
+  margin-top: 14px;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.3em;
+  color: var(--ink-soft);
+  text-transform: uppercase;
 }
 
-.header-update {
-  position: absolute;
-  right: 28px;
-  bottom: 12px;
-  font-family: "IBM Plex Mono", monospace;
+.header-sub-divider {
+  color: var(--line-bright);
+  margin: 0 8px;
+  font-weight: 400;
+}
+
+.header-sub-jp {
+  font-family: "Zen Kaku Gothic New", sans-serif;
   font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
   color: var(--warm-gray);
 }
 
-/* ── Counter (retro nod) ── */
-.counter {
+.header-meta {
+  margin-top: 14px;
   font-family: "IBM Plex Mono", monospace;
-  font-size: 11px;
+  font-size: 10px;
+  letter-spacing: 0.22em;
   color: var(--warm-gray);
-  text-align: right;
-  margin-bottom: 16px;
-  letter-spacing: 0.03em;
+  position: relative;
+  z-index: 2;
+  text-align: center;
 }
+
+/* ── Color belt ── */
+.color-belt {
+  display: flex;
+  height: 8px;
+  margin: 0;
+  border-top: 2px solid var(--ink);
+}
+
+.color-belt span { flex: 1; }
+.color-belt .s1 { background: var(--red); }
+.color-belt .s2 { background: var(--amber); }
+.color-belt .s3 { background: var(--paper-3); }
+.color-belt .s4 { background: var(--blue); }
+.color-belt .s5 { background: var(--red); }
 
 /* ── Ticker ── */
 .ticker {
-  background-color: var(--parchment-d);
-  border-top: 1px solid var(--sand);
-  border-bottom: 1px solid var(--sand);
-  padding: 8px 12px;
-  margin: 16px 0;
+  background: var(--paper-3);
+  border: 1px solid var(--ink);
+  border-left: 3px solid var(--red);
+  padding: 9px 14px;
+  margin: 18px 0 22px;
   overflow: hidden;
   white-space: nowrap;
   font-family: "IBM Plex Mono", monospace;
   font-size: 12px;
-  color: var(--slate);
-  letter-spacing: 0.04em;
+  color: var(--ink-soft);
+  letter-spacing: 0.06em;
+  box-shadow: 2px 2px 0 var(--line-bright);
 }
 
 .ticker span {
   display: inline-block;
   animation: scroll-left 22s linear infinite;
+  font-weight: 500;
+}
+
+.ticker span::before {
+  content: "▶ ";
+  color: var(--red);
+  font-weight: 700;
 }
 
 @keyframes scroll-left {
@@ -187,135 +565,294 @@ body::after {
   100% { transform: translateX(-100%); }
 }
 
-/* ── Navigation ── */
-.nav {
-  display: flex;
-  gap: 0;
-  margin: 20px 0 24px;
-  font-family: "IBM Plex Mono", monospace;
-  font-size: 13px;
-}
-
-.nav a {
-  flex: 1;
-  text-align: center;
-  padding: 10px 8px;
-  border: 1px solid var(--sand);
-  color: var(--ink-soft);
-  background: var(--cream);
-  transition: all 0.15s;
-  border-bottom-width: 2px;
-}
-
-.nav a:hover {
-  background: var(--ink);
-  color: var(--parchment);
-  border-color: var(--ink);
-  border-bottom-color: var(--terracotta);
-}
-
-.nav a + a {
-  border-left: none;
-}
-
-/* ── Divider ── */
+/* ── Divider with center diamond ── */
 .divider {
   border: none;
+  display: flex;
+  align-items: center;
+  margin: 32px 0;
+  gap: 12px;
+  height: 1px;
+}
+
+.divider::before,
+.divider::after {
+  content: "";
+  flex: 1;
   height: 1px;
   background: linear-gradient(
     90deg,
-    transparent 0%,
-    var(--sand) 15%,
-    var(--sand) 85%,
-    transparent 100%
+    transparent,
+    var(--line-deep) 50%,
+    transparent
   );
-  margin: 28px 0;
+}
+
+.divider span {
+  width: 10px;
+  height: 10px;
+  background: var(--red);
+  transform: rotate(45deg);
+  display: block;
+  box-shadow: 0 0 0 3px var(--paper), 0 0 0 4px var(--ink);
 }
 
 /* ── Section heading ── */
 .section-heading {
   display: flex;
-  align-items: center;
-  gap: 12px;
-  margin: 32px 0 16px;
-  font-weight: 700;
-  font-size: 16px;
-  letter-spacing: 0.06em;
+  align-items: baseline;
+  gap: 14px;
+  margin: 36px 0 18px;
+  padding: 8px 12px;
+  background: linear-gradient(
+    90deg,
+    var(--ink) 0%,
+    var(--red-d) 60%,
+    transparent 100%
+  );
+  color: var(--paper-3);
+  position: relative;
 }
 
 .section-heading::before {
-  content: "";
-  width: 4px;
-  height: 22px;
-  background: var(--terracotta);
+  content: "■";
+  color: var(--amber);
+  font-size: 14px;
+  line-height: 1;
   flex-shrink: 0;
 }
 
-.section-heading::after {
-  content: "";
-  flex: 1;
-  height: 1px;
-  background: var(--sand);
-  margin-left: 8px;
+.section-heading .en {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.28em;
+  color: var(--amber-soft);
+  text-transform: uppercase;
+  align-self: center;
+  margin-left: auto;
+}
+
+.section-heading .jp {
+  font-weight: 700;
+  font-size: 17px;
+  letter-spacing: 0.08em;
+  color: var(--paper-3);
+}
+
+/* ── Intro paragraph ── */
+.intro {
+  font-size: 14px;
+  line-height: 2.05;
+  color: var(--ink);
+  letter-spacing: 0.02em;
+}
+
+.intro a {
+  font-weight: 600;
 }
 
 /* ── Capability tags ── */
 .capabilities {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
-  margin: 16px 0;
+  gap: 6px;
+  margin: 18px 0;
   padding: 0;
   list-style: none;
 }
 
 .capabilities li {
   font-family: "IBM Plex Mono", monospace;
-  font-size: 12px;
-  padding: 5px 12px;
-  background: var(--cream);
-  border: 1px solid var(--sand);
+  font-size: 11px;
+  font-weight: 500;
+  padding: 6px 12px;
+  background: var(--paper-3);
+  border: 1px solid var(--ink);
+  color: var(--ink);
+  letter-spacing: 0.04em;
+  box-shadow: 2px 2px 0 var(--line-bright);
+  position: relative;
+}
+
+.capabilities li::before {
+  content: "■";
+  color: var(--red);
+  margin-right: 6px;
+  font-size: 9px;
+}
+
+/* ── Service cards (運営サービス) ── */
+.services {
+  display: grid;
+  gap: 14px;
+  margin: 18px 0 4px;
+}
+
+.service-card {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 16px;
+  padding: 14px 16px;
+  background: var(--paper-3);
+  border: 2px solid var(--ink);
+  box-shadow: 3px 3px 0 var(--line-deep);
+  color: var(--ink);
+  border-bottom: 2px solid var(--ink);
+  transition: transform 0.15s, box-shadow 0.15s, background 0.15s;
+  position: relative;
+}
+
+.service-card:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: 4px 4px 0 var(--ink);
+  background: var(--paper-2);
+  color: var(--ink);
+  border-bottom-color: var(--ink);
+}
+
+.service-card:visited { color: var(--ink); }
+
+.service-mark {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Zen Kaku Gothic New", sans-serif;
+  font-size: 22px;
+  font-weight: 900;
+  border: 1.5px solid var(--ink);
+  box-shadow: 2px 2px 0 var(--ink);
+  flex-shrink: 0;
+  letter-spacing: 0;
+}
+
+.service-mark.m-water  { background: var(--blue);  color: var(--paper-3); }
+.service-mark.m-bonsai { background: var(--green); color: var(--paper-3); }
+.service-mark.m-music  { background: var(--red);   color: var(--paper-3); }
+
+.service-body { min-width: 0; }
+
+.service-name {
+  font-weight: 700;
+  font-size: 16px;
+  letter-spacing: 0.06em;
+  margin: 0 0 3px;
+  color: var(--ink);
+}
+
+.service-tag {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 11px;
   color: var(--ink-soft);
-  letter-spacing: 0.02em;
+  letter-spacing: 0.04em;
+  margin-bottom: 4px;
+}
+
+.service-url {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 11px;
+  color: var(--warm-gray);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.service-url::before {
+  content: "▶ ";
+  color: var(--red);
+}
+
+.service-visit {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  padding: 7px 12px;
+  background: var(--paper);
+  border: 1.5px solid var(--ink);
+  color: var(--ink);
+  box-shadow:
+    inset 1px 1px 0 var(--paper-3),
+    inset -1px -1px 0 var(--line-bright),
+    2px 2px 0 var(--ink);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.service-card:hover .service-visit {
+  background: var(--amber-soft);
+}
+
+.service-visit::after {
+  content: " →";
+  color: var(--red-d);
 }
 
 /* ── Work cards ── */
 .work-card {
-  background: var(--cream);
-  border: 1px solid var(--sand);
-  margin-bottom: 20px;
-  transition: border-color 0.2s;
+  background: var(--paper-3);
+  border: 2px solid var(--ink);
+  margin-bottom: 16px;
+  position: relative;
+  transition: transform 0.15s, box-shadow 0.15s;
+  box-shadow: 3px 3px 0 var(--line-deep);
+}
+
+.work-card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: var(--red);
 }
 
 .work-card:hover {
-  border-color: var(--terracotta);
+  transform: translate(-1px, -1px);
+  box-shadow: 4px 4px 0 var(--ink);
 }
 
 .work-card-header {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 14px;
   padding: 14px 20px;
-  border-bottom: 1px solid var(--parchment-d);
-  background: linear-gradient(90deg, var(--parchment-d) 0%, var(--cream) 100%);
+  border-bottom: 1px solid var(--line-bright);
+  background: linear-gradient(90deg, var(--paper-2) 0%, var(--paper-3) 100%);
 }
 
 .work-number {
   font-family: "IBM Plex Mono", monospace;
-  font-size: 20px;
-  font-weight: 600;
-  color: var(--terracotta);
-  min-width: 32px;
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.18em;
+  padding: 3px 8px;
+  border: 1px solid var(--ink);
+  background: var(--amber-soft);
+  flex-shrink: 0;
+  box-shadow: 1px 1px 0 var(--ink);
+}
+
+.work-number::before {
+  content: "FILE No.";
+  color: var(--red-d);
+  margin-right: 2px;
 }
 
 .work-title {
   font-weight: 700;
   font-size: 14px;
-  letter-spacing: 0.03em;
+  letter-spacing: 0.04em;
+  color: var(--ink);
 }
 
 .work-card-body {
-  padding: 14px 20px 16px;
+  padding: 14px 20px 18px;
 }
 
 .work-detail {
@@ -326,31 +863,39 @@ body::after {
 
 .work-detail li {
   position: relative;
-  padding-left: 18px;
-  margin-bottom: 5px;
+  padding-left: 22px;
+  margin-bottom: 6px;
   font-size: 13px;
   color: var(--ink-soft);
-  line-height: 1.7;
+  line-height: 1.75;
 }
 
 .work-detail li::before {
-  content: "";
+  content: "▶";
   position: absolute;
   left: 0;
-  top: 0.65em;
-  width: 6px;
-  height: 6px;
-  border: 1.5px solid var(--olive);
-  background: transparent;
+  top: 0;
+  color: var(--red);
+  font-size: 9px;
+  line-height: 2;
 }
 
-/* ── Preparing card ── */
 .work-card.preparing {
+  opacity: 0.55;
   border-style: dashed;
-  opacity: 0.6;
+  box-shadow: none;
+}
+
+.work-card.preparing::before {
+  background: var(--warm-gray);
 }
 
 .work-card.preparing .work-number {
+  background: var(--paper);
+  color: var(--warm-gray);
+}
+
+.work-card.preparing .work-number::before {
   color: var(--warm-gray);
 }
 
@@ -358,318 +903,493 @@ body::after {
 .contact-table {
   width: 100%;
   border-collapse: collapse;
-  margin: 16px 0;
+  margin: 18px 0;
+  background: var(--paper-3);
+  border: 2px solid var(--ink);
+  box-shadow: 3px 3px 0 var(--line-deep);
 }
 
 .contact-table th,
 .contact-table td {
-  padding: 10px 16px;
+  padding: 12px 16px;
   text-align: left;
   font-size: 14px;
-  border-bottom: 1px solid var(--sand);
+  border-bottom: 1px solid var(--line-bright);
+}
+
+.contact-table tr:last-child th,
+.contact-table tr:last-child td {
+  border-bottom: none;
 }
 
 .contact-table th {
-  width: 100px;
-  background: var(--parchment-d);
-  color: var(--slate);
+  width: 110px;
+  background: var(--amber-soft);
+  color: var(--ink);
   font-family: "IBM Plex Mono", monospace;
-  font-size: 12px;
-  font-weight: 500;
-  letter-spacing: 0.04em;
-  border-right: 2px solid var(--terracotta);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  border-right: 2px solid var(--ink);
+  text-transform: uppercase;
 }
 
-.contact-table td {
-  background: var(--cream);
-}
+.contact-table td { color: var(--ink); }
 
 /* ── Back to top ── */
 .back-to-top {
   text-align: right;
-  margin-top: 12px;
+  margin-top: 14px;
 }
 
 .back-to-top a {
   font-family: "IBM Plex Mono", monospace;
-  font-size: 11px;
-  color: var(--warm-gray);
-  letter-spacing: 0.04em;
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--ink-soft);
+  letter-spacing: 0.18em;
+  border-bottom: none;
+  padding: 2px 8px;
 }
 
-.back-to-top a:hover {
-  color: var(--terracotta);
+.back-to-top a:hover { color: var(--paper-3); }
+
+.back-to-top a::before {
+  content: "▲ ";
+  color: var(--red);
 }
 
 /* ── Footer ── */
 .footer {
   text-align: center;
-  padding-top: 20px;
+  padding-top: 24px;
   font-size: 12px;
   color: var(--warm-gray);
-  letter-spacing: 0.03em;
+  letter-spacing: 0.06em;
 }
 
-.footer-rule {
+.footer-mark {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.footer-mark::before,
+.footer-mark::after {
+  content: "";
+  width: 30px;
+  height: 1px;
+  background: var(--line-deep);
   display: block;
-  width: 40px;
-  height: 2px;
-  background: var(--terracotta);
-  margin: 0 auto 16px;
-  border: none;
+}
+
+.footer-mark-disc {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--red);
+  box-shadow: 0 0 0 1px var(--ink);
+}
+
+.footer .mono {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  color: var(--warm-gray);
 }
 
 .footer .license {
   font-family: "IBM Plex Mono", monospace;
   font-size: 10px;
-  margin-top: 8px;
-  color: var(--sand);
+  margin-top: 6px;
+  color: var(--line-bright);
 }
 
-/* ── Intro paragraph ── */
-.intro {
-  font-size: 14px;
-  line-height: 2;
-  color: var(--ink-soft);
-}
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 640px) {
+  body { font-size: 14px; }
+  .container { padding: 10px 8px 40px; }
 
-/* ── "NEW" badge ── */
-.badge-new {
-  display: inline-block;
-  font-family: "IBM Plex Mono", monospace;
-  font-size: 10px;
-  font-weight: 600;
-  color: var(--cream);
-  background: var(--terracotta);
-  padding: 1px 6px;
-  margin-left: 6px;
-  letter-spacing: 0.08em;
-  vertical-align: middle;
-}
+  .window-titlebar { padding: 4px 6px; gap: 6px; }
+  .window-title {
+    font-size: 10px;
+    letter-spacing: 0.06em;
+    padding: 2px 8px;
+    max-width: none;
+  }
+  .ctrl { width: 11px; height: 11px; }
+  .window-corner { display: none; }
 
-/* ── Responsive ── */
-@media (max-width: 600px) {
-  .container {
-    padding: 16px 14px 40px;
+  .window-menubar { gap: 2px; padding: 3px 4px; font-size: 11px; }
+  .menu-item { padding: 2px 6px; }
+
+  .window-addressbar { padding: 5px 6px; gap: 4px; flex-wrap: wrap; }
+  .nav-btn { min-width: 24px; height: 22px; font-size: 10px; padding: 0 4px; }
+  .address-field { padding: 3px 6px; font-size: 11px; order: 3; flex-basis: 100%; }
+  .address-label { display: none; }
+  .go-btn { display: none; }
+
+  .window-content { padding: 14px 12px 8px; }
+  .window-statusbar { font-size: 9px; gap: 6px; padding: 4px 8px; flex-wrap: wrap; }
+  .status-meta { padding: 0 4px; }
+
+  .header { padding: 28px 18px 20px; }
+  .header::before { width: 360px; height: 360px; }
+  .header::after  { width: 500px; height: 500px; }
+  .header-title { font-size: 40px; letter-spacing: 0.18em; }
+  .header-sub { font-size: 10px; letter-spacing: 0.22em; }
+  .header-sub-divider { display: none; }
+  .header-sub-jp { display: block; margin-top: 4px; }
+
+  .section-heading {
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 8px 10px;
   }
-  .header {
-    padding: 20px 18px 18px;
+  .section-heading .en {
+    margin-left: 0;
+    width: 100%;
+    order: 3;
+    font-size: 10px;
+    letter-spacing: 0.2em;
   }
-  .header-title {
-    font-size: 22px;
-  }
-  .header-update {
-    position: static;
-    display: block;
-    margin-top: 8px;
-  }
-  .nav {
-    flex-direction: column;
-  }
-  .nav a + a {
-    border-left: 1px solid var(--sand);
-    border-top: none;
-  }
-  .work-card-header {
+
+  .service-card {
+    grid-template-columns: auto 1fr;
+    gap: 12px;
     padding: 12px 14px;
   }
-  .work-card-body {
-    padding: 12px 14px;
+  .service-card .service-visit {
+    grid-column: 1 / -1;
+    text-align: center;
   }
+  .service-mark { width: 40px; height: 40px; font-size: 18px; }
+  .service-name { font-size: 15px; }
+
+  .work-card-header { flex-wrap: wrap; padding: 12px 14px; gap: 10px; }
+  .work-card-body { padding: 12px 14px 14px; }
+
+  .contact-table th { width: 86px; font-size: 10px; padding: 10px 12px; }
+  .contact-table td { padding: 10px 12px; }
 }
 </style>
 </head>
-<body>
+<body id="top">
 <div class="container">
 
-<!-- ======== Header ======== -->
-<a id="top"></a>
-<div class="header">
-  <div class="header-title">ｲｲﾋﾄ</div>
-  <div class="header-sub">Product Development Support</div>
-  <div class="header-update">upd. 2026/03/28</div>
-</div>
+<!-- ============================================
+     BROWSER WINDOW
+============================================ -->
+<div class="browser-window">
 
-<div class="counter">
-visitor no. &#9632;&#9632;&#9632;&#9632;
-</div>
+  <!-- title bar -->
+  <div class="window-titlebar" aria-hidden="true">
+    <div class="window-controls">
+      <span class="ctrl ctrl-close"></span>
+      <span class="ctrl ctrl-min"></span>
+      <span class="ctrl ctrl-max"></span>
+    </div>
+    <div class="window-title">ｲｲﾋﾄ.html &mdash; Product Development Support</div>
+    <div class="window-corner">
+      <span class="c-min"></span>
+      <span class="c-max"></span>
+      <span class="c-close"></span>
+    </div>
+  </div>
 
-<!-- ======== Ticker ======== -->
-<div class="ticker">
-<span>&gt;&gt; ｲｲﾋﾄ は業務フロー整理・プロダクト開発支援・スクラム導入を得意とする個人事業主です &lt;&lt;</span>
-</div>
+  <!-- menu bar -->
+  <nav class="window-menubar" aria-label="Main navigation">
+    <a class="menu-item" href="#about"><span class="accent">A</span>bout</a>
+    <a class="menu-item" href="#works"><span class="accent">W</span>orks</a>
+    <a class="menu-item" href="#services"><span class="accent">S</span>ervices</a>
+    <a class="menu-item" href="#contact"><span class="accent">C</span>ontact</a>
+  </nav>
 
-<!-- ======== Navigation ======== -->
-<nav class="nav">
-  <a href="#about">About</a>
-  <a href="#works">Works</a>
-  <a href="#contact">Contact</a>
-</nav>
+  <!-- address bar (decorative) -->
+  <div class="window-addressbar" aria-hidden="true">
+    <span class="nav-btn">◀</span>
+    <span class="nav-btn">▶</span>
+    <span class="nav-btn">↻</span>
+    <span class="nav-btn">⌂</span>
+    <div class="address-field">
+      <span class="address-label">Location</span>
+      <span class="address-url">https://iihito.jp/</span>
+    </div>
+    <span class="go-btn">GO</span>
+  </div>
 
-<!-- ======== About ======== -->
-<div class="section-heading"><a id="about"></a>ｲｲﾋﾄについて</div>
+  <!-- main content -->
+  <main class="window-content">
 
-<p class="intro">
-ｲｲﾋﾄ は、プロダクト開発の上流工程を中心に支援を行う個人事業主です。<br>
-業務フロー整理、要件定義、開発タスク管理、チームビルディングなど、<br>
-プロダクトを「つくる前」から「つくりきる」までを一気通貫でサポートします。
-</p>
+    <!-- ======== Header ======== -->
+    <header class="header">
+      <div class="header-inner">
+        <h1 class="header-title">ｲｲﾋﾄ</h1>
+        <div class="header-sub">
+          Product Development Support
+          <span class="header-sub-divider">／</span>
+          <span class="header-sub-jp">プロダクト開発支援</span>
+        </div>
+      </div>
+      <div class="header-meta">UPD. 2026.05.27</div>
+    </header>
 
-<ul class="capabilities">
-<li>業務フロー整理・可視化</li>
-<li>ユーザーストーリー / MVP要件定義</li>
-<li>テスト設計・開発タスク管理</li>
-<li>スクラム導入・SM育成</li>
-<li>オフショア開発ブリッジ</li>
-<li>社内業務自動化支援</li>
-</ul>
+    <!-- color belt -->
+    <div class="color-belt">
+      <span class="s1"></span>
+      <span class="s2"></span>
+      <span class="s3"></span>
+      <span class="s4"></span>
+      <span class="s5"></span>
+    </div>
 
-<div class="section-heading" style="margin-top: 24px;">プロフィール - 水野亮人</div>
+    <!-- ticker -->
+    <div class="ticker">
+      <span>ｲｲﾋﾄ は業務フロー整理・プロダクト開発支援・スクラム導入を得意とする個人事業主です</span>
+    </div>
 
-<p class="intro">
-金沢大学卒業後、アイ・オー・データ機器にHWエンジニアとして入社。その後、新規事業開発をリードし、社内初の「SaaS Plus a Box」プロダクトを立ち上げ。退社後、複数社でプロダクト開発併走支援のためPM/PMOとして参画。2024年、NFCの価値を広めることを目指して株式会社TAGPPIを設立し、現在も共同代表。宅録音楽家として<a href="https://gegegeiscoming.work" target="_blank" rel="noopener">GeGeGe</a>としても活動中。生成AI駆動開発の波に乗って、2025年、ペットボトル水のレビューサイト「<a href="https://mizunomo.jp" target="_blank" rel="noopener">MIZUNOMO</a>」の個人開発と運営を開始。<a href="https://note.com/iihito_toshite" target="_blank" rel="noopener">Note</a>やYoutube,各種SNSたまに更新します。
-</p>
+    <!-- ABOUT -->
+    <h2 id="about" class="section-heading">
+      <span class="jp">ｲｲﾋﾄについて</span>
+      <span class="en">SECTION 01 / ABOUT</span>
+    </h2>
 
-<div class="back-to-top"><a href="#top">[TOP]</a></div>
+    <p class="intro">
+    ｲｲﾋﾄ は、プロダクト開発の上流工程を中心に支援を行う個人事業主です。<br>
+    業務フロー整理、要件定義、開発タスク管理、チームビルディングなど、<br>
+    プロダクトを「つくる前」から「つくりきる」までを一気通貫でサポートします。
+    </p>
 
-<hr class="divider">
+    <ul class="capabilities">
+      <li>業務フロー整理・可視化</li>
+      <li>ユーザーストーリー / MVP要件定義</li>
+      <li>テスト設計・開発タスク管理</li>
+      <li>スクラム導入・SM育成</li>
+      <li>オフショア開発ブリッジ</li>
+      <li>社内業務自動化支援</li>
+    </ul>
 
-<!-- ======== Works ======== -->
-<div class="section-heading"><a id="works"></a>業務実績</div>
+    <h3 class="section-heading" style="margin-top: 32px;">
+      <span class="jp">プロフィール - 水野亮人</span>
+      <span class="en">PROFILE</span>
+    </h3>
 
-<p class="intro">
-これまでの主な支援実績をご紹介します。
-</p>
+    <p class="intro">
+    ハードウェアエンジニアからPMへ。金沢大学卒業後、アイ・オー・データ機器でHW開発から新規事業開発まで担当し、社内初の「SaaS Plus a Box」プロダクトを立ち上げました。
+    </p>
 
-<!-- Work 1 -->
-<div class="work-card">
-<div class="work-card-header">
-  <div class="work-number">01</div>
-  <div class="work-title">卸売業者様のプロダクト開発支援</div>
-</div>
-<div class="work-card-body">
-<ul class="work-detail">
-<li>業務フロー整理</li>
-<li>オフショア開発エンジニアとの要件ブリッジ</li>
-<li>PoC開発タスク管理</li>
-</ul>
-</div>
-</div>
+    <p class="intro">
+    退社後は卸売・建設商社・セキュリティSaaSなど複数社で、PM/PMOとして開発に併走。業務フロー整理・MVP要件定義・スクラム導入・オフショア開発ブリッジなど、仕様書になる手前の領域が得意です。
+    </p>
 
-<!-- Work 2 -->
-<div class="work-card">
-<div class="work-card-header">
-  <div class="work-number">02</div>
-  <div class="work-title">建設商社様のプロダクト開発支援</div>
-</div>
-<div class="work-card-body">
-<ul class="work-detail">
-<li>業務フロー整理</li>
-<li>ユーザーストーリー洗い出し</li>
-<li>インセプションデッキ作成支援</li>
-<li>MVP要件定義</li>
-<li>スクラム導入</li>
-<li>テスト設計</li>
-<li>プロダクト開発タスク管理</li>
-</ul>
-</div>
-</div>
+    <p class="intro">
+    2024年に株式会社TAGPPIを共同設立、NFCの可能性を広げる事業を推進中。個人では「MIZUNOMO」（ペットボトル水レビュー）と「盆栽やろう」を立ち上げ・運営、宅録音楽家「GeGeGe」としても活動中。<a href="https://note.com/iihito_toshite" target="_blank" rel="noopener">Note</a>・YouTube・SNSにも気が向くと出没します。
+    </p>
 
-<!-- Work 3 -->
-<div class="work-card">
-<div class="work-card-header">
-  <div class="work-number">03</div>
-  <div class="work-title">セキュリティSaaS会社様のプロダクト開発支援</div>
-</div>
-<div class="work-card-body">
-<ul class="work-detail">
-<li>業務フロー整理</li>
-<li>ユーザーストーリー洗い出し</li>
-<li>MVP要件定義</li>
-<li>社内工数測定と見える化</li>
-<li>社内業務フロー自動化支援</li>
-<li>チーミング文書の設計支援と作成</li>
-<li>スクラム導入</li>
-<li>プロダクト開発タスク管理</li>
-<li>スクラムマスター育成</li>
-</ul>
-</div>
-</div>
+    <p class="intro">
+    並べてみると、どれもデジタルとアナログの境目にある領域です。そういう場所が好きで、自然と手が伸びます。
+    </p>
 
-<!-- Work 4: Preparing -->
-<div class="work-card preparing">
-<div class="work-card-header">
-  <div class="work-number">04</div>
-  <div class="work-title">（準備中）</div>
-</div>
-<div class="work-card-body">
-<ul class="work-detail">
-<li>Coming soon...</li>
-</ul>
-</div>
-</div>
+    <p class="intro">
+    仕様書を書く前に、人と業務をよく見たい。そんな温度感でプロダクトの立ち上げ・開発をご一緒できればうれしいです。
+    </p>
 
-<!--
-===========================================
-  業務実績の追加方法:
-  下記テンプレートをコピーして、上の work-card の
-  直後に貼り付けてください。番号は適宜変更してください。
-===========================================
+    <div class="back-to-top"><a href="#top">RETURN TO TOP</a></div>
 
-<div class="work-card">
-<div class="work-card-header">
-  <div class="work-number">05</div>
-  <div class="work-title">○○様のプロダクト開発支援</div>
-</div>
-<div class="work-card-body">
-<ul class="work-detail">
-<li>支援内容1</li>
-<li>支援内容2</li>
-<li>支援内容3</li>
-</ul>
-</div>
-</div>
+    <div class="divider" role="separator" aria-hidden="true"><span></span></div>
 
-===========================================
--->
+    <!-- WORKS -->
+    <h2 id="works" class="section-heading">
+      <span class="jp">業務実績</span>
+      <span class="en">SECTION 02 / WORKS</span>
+    </h2>
 
-<div class="back-to-top"><a href="#top">[TOP]</a></div>
+    <p class="intro">これまでの主な支援実績をご紹介します。</p>
 
-<hr class="divider">
+    <div class="work-card">
+      <div class="work-card-header">
+        <div class="work-number">01</div>
+        <div class="work-title">卸売業者様のプロダクト開発支援</div>
+      </div>
+      <div class="work-card-body">
+        <ul class="work-detail">
+          <li>業務フロー整理</li>
+          <li>オフショア開発エンジニアとの要件ブリッジ</li>
+          <li>PoC開発タスク管理</li>
+        </ul>
+      </div>
+    </div>
 
-<!-- ======== Contact ======== -->
-<div class="section-heading"><a id="contact"></a>お問い合わせ</div>
+    <div class="work-card">
+      <div class="work-card-header">
+        <div class="work-number">02</div>
+        <div class="work-title">建設商社様のプロダクト開発支援</div>
+      </div>
+      <div class="work-card-body">
+        <ul class="work-detail">
+          <li>業務フロー整理</li>
+          <li>ユーザーストーリー洗い出し</li>
+          <li>インセプションデッキ作成支援</li>
+          <li>MVP要件定義</li>
+          <li>スクラム導入</li>
+          <li>テスト設計</li>
+          <li>プロダクト開発タスク管理</li>
+        </ul>
+      </div>
+    </div>
 
-<p class="intro">
-お仕事のご相談・ご依頼はお気軽にどうぞ。
-</p>
+    <div class="work-card">
+      <div class="work-card-header">
+        <div class="work-number">03</div>
+        <div class="work-title">セキュリティSaaS会社様のプロダクト開発支援</div>
+      </div>
+      <div class="work-card-body">
+        <ul class="work-detail">
+          <li>業務フロー整理</li>
+          <li>ユーザーストーリー洗い出し</li>
+          <li>MVP要件定義</li>
+          <li>社内工数測定と見える化</li>
+          <li>社内業務フロー自動化支援</li>
+          <li>チーミング文書の設計支援と作成</li>
+          <li>スクラム導入</li>
+          <li>プロダクト開発タスク管理</li>
+          <li>スクラムマスター育成</li>
+        </ul>
+      </div>
+    </div>
 
-<table class="contact-table">
-<tr>
-<th>屋号</th>
-<td>ｲｲﾋﾄ</td>
-</tr>
-<tr>
-<th>Mail</th>
-<td><a href="mailto:rmizuno@iihito.jp">rmizuno@iihito.jp</a></td>
-</tr>
-</table>
+    <div class="work-card preparing">
+      <div class="work-card-header">
+        <div class="work-number">04</div>
+        <div class="work-title">（準備中）</div>
+      </div>
+      <div class="work-card-body">
+        <ul class="work-detail">
+          <li>Coming soon...</li>
+        </ul>
+      </div>
+    </div>
 
-<div class="back-to-top"><a href="#top">[TOP]</a></div>
+    <!--
+    ===========================================
+      業務実績の追加方法:
+      下記テンプレートをコピーして、上の work-card の
+      直後に貼り付けてください。番号は適宜変更してください。
+    ===========================================
 
-<hr class="divider">
+    <div class="work-card">
+      <div class="work-card-header">
+        <div class="work-number">05</div>
+        <div class="work-title">○○様のプロダクト開発支援</div>
+      </div>
+      <div class="work-card-body">
+        <ul class="work-detail">
+          <li>支援内容1</li>
+          <li>支援内容2</li>
+        </ul>
+      </div>
+    </div>
 
-<!-- ======== Footer ======== -->
-<div class="footer">
-  <span class="footer-rule"></span>
-  <p class="mono" style="font-size: 11px;">
-    &lt;!-- managed by ｲｲﾋﾄ --&gt;
-  </p>
-  <p>
-    Since 2026 ｲｲﾋﾄ. All Rights Reserved.
-  </p>
-  <p class="license">このサイトはリンクフリーです。</p>
-</div>
+    ===========================================
+    -->
+
+    <div class="back-to-top"><a href="#top">RETURN TO TOP</a></div>
+
+    <div class="divider" role="separator" aria-hidden="true"><span></span></div>
+
+    <!-- SERVICES -->
+    <h2 id="services" class="section-heading">
+      <span class="jp">運営サービス</span>
+      <span class="en">SECTION 03 / SERVICES</span>
+    </h2>
+
+    <p class="intro">個人開発・運営しているサービスと、アーティスト活動です。</p>
+
+    <div class="services">
+      <a class="service-card" href="https://mizunomo.jp/" target="_blank" rel="noopener">
+        <span class="service-mark m-water">水</span>
+        <div class="service-body">
+          <div class="service-name">MIZUNOMO</div>
+          <div class="service-tag">ペットボトル水レビュー / 個人開発・運営</div>
+          <div class="service-url">https://mizunomo.jp/</div>
+        </div>
+        <span class="service-visit">VISIT</span>
+      </a>
+
+      <a class="service-card" href="https://bonsai-yarou.com/" target="_blank" rel="noopener">
+        <span class="service-mark m-bonsai">盆</span>
+        <div class="service-body">
+          <div class="service-name">盆栽やろう</div>
+          <div class="service-tag">個人開発・運営</div>
+          <div class="service-url">https://bonsai-yarou.com/</div>
+        </div>
+        <span class="service-visit">VISIT</span>
+      </a>
+
+      <a class="service-card" href="https://www.gegegeiscoming.work/" target="_blank" rel="noopener">
+        <span class="service-mark m-music">音</span>
+        <div class="service-body">
+          <div class="service-name">GeGeGe</div>
+          <div class="service-tag">宅録音楽家 / オフィシャルサイト</div>
+          <div class="service-url">https://www.gegegeiscoming.work/</div>
+        </div>
+        <span class="service-visit">VISIT</span>
+      </a>
+    </div>
+
+    <div class="back-to-top"><a href="#top">RETURN TO TOP</a></div>
+
+    <div class="divider" role="separator" aria-hidden="true"><span></span></div>
+
+    <!-- CONTACT -->
+    <h2 id="contact" class="section-heading">
+      <span class="jp">お問い合わせ</span>
+      <span class="en">SECTION 04 / CONTACT</span>
+    </h2>
+
+    <p class="intro">お仕事のご相談・ご依頼はお気軽にどうぞ。</p>
+
+    <table class="contact-table">
+      <tr>
+        <th>屋号</th>
+        <td>ｲｲﾋﾄ</td>
+      </tr>
+      <tr>
+        <th>Mail</th>
+        <td><a href="mailto:rmizuno@iihito.jp">rmizuno@iihito.jp</a></td>
+      </tr>
+    </table>
+
+    <div class="back-to-top"><a href="#top">RETURN TO TOP</a></div>
+
+    <div class="divider" role="separator" aria-hidden="true"><span></span></div>
+
+    <!-- footer -->
+    <footer class="footer">
+      <div class="footer-mark" aria-hidden="true">
+        <span class="footer-mark-disc"></span>
+      </div>
+      <p class="mono">&lt;!-- managed by ｲｲﾋﾄ --&gt;</p>
+      <p>ｲｲﾋﾄ. All Rights Reserved.</p>
+      <p class="license">このサイトはリンクフリーです。</p>
+    </footer>
+
+  </main><!-- /.window-content -->
+
+  <!-- status bar (decorative) -->
+  <div class="window-statusbar" aria-hidden="true">
+    <span class="status-dot"></span>
+    <span class="status-text">Done.</span>
+    <span class="status-spacer"></span>
+    <span class="status-meta">100%</span>
+    <span class="status-meta">UTF-8</span>
+    <span class="status-meta status-meta-secure">iihito.jp</span>
+  </div>
+
+</div><!-- /.browser-window -->
 
 </div><!-- /.container -->
 </body>
